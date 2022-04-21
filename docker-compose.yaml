@@ -22,8 +22,6 @@ services:
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s npm start
     networks:
       - dockernet
-    volumes:
-      - ./node:/usr/src/app
     tty: true
     depends_on:
       - db
