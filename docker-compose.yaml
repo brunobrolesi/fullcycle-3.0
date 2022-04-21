@@ -27,6 +27,15 @@ services:
     tty: true
     depends_on:
       - db
+    
+  nginx:
+    build: 
+      context: nginx
+    container_name: nginx
+    networks:
+      - dockernet
+    ports:
+      - 8080:80
 
 networks:
   dockernet:
